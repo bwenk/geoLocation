@@ -1,0 +1,206 @@
+<html>
+<head>
+  <title>Geolocation</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="Bruno Wenk">
+  <meta name="date" content="2018-06-12"
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/w3-v4.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Open+Sans+Condensed:300" rel="stylesheet">
+  <style>
+    body {font-family: 'Josefin Slab', 'Georgia', serif;}
+    h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans Condensed', 'Verdana', sans-serif;}
+    .hint {font-family: 'Open Sans Condensed', 'Verdana', sans-serif;}
+    .title {color: #ecb535; font-weight: bold; margin-top: 2em;}
+    .w3-bar,h1,button {font-family: 'Open Sans Condensed', 'Verdana', sans-serif;}
+    .w3-theme-l5 {color:#000 !important; background-color:#fefbf5 !important}
+    .w3-theme-l4 {color:#000 !important; background-color:#fcf2dc !important}
+    .w3-theme-l3 {color:#000 !important; background-color:#f9e6ba !important}
+    .w3-theme-l2 {color:#000 !important; background-color:#f5d997 !important}
+    .w3-theme-l1 {color:#000 !important; background-color:#f2cd75 !important}
+    .w3-theme-d1 {color:#000 !important; background-color:#ecb535 !important}
+    .w3-theme-d2 {color:#000 !important; background-color:#e9ab18 !important}
+    .w3-theme-d3 {color:#fff !important; background-color:#ce9613 !important}
+    .w3-theme-d4 {color:#fff !important; background-color:#b08010 !important}
+    .w3-theme-d5 {color:#fff !important; background-color:#936b0e !important}
+    .w3-theme-light {color:#000 !important; background-color:#fefbf5 !important}
+    .w3-theme-dark {color:#fff !important; background-color:#936b0e !important}
+    .w3-theme-action {color:#fff !important; background-color:#936b0e !important}
+    .w3-theme {color:#000 !important; background-color:#efc050 !important}
+    .w3-text-theme {color:#efc050 !important}
+    .w3-theme-border {border-color:#efc050 !important}
+    .w3-hover-theme:hover {color:#000 !important; background-color:#efc050 !important}
+    .accordion {color: white; cursor: pointer; padding: 18px; width: 100%; border: none; text-align: left; outline: none; transition: 0.4s;}
+    .active, .accordion:hover {background-color: #ecb535;}
+    .panel {padding: 0 18px; display: none; background-color: #ecb535; overflow: hidden;}
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="w3-container w3-theme-d1 w3-center" style="padding:64px 16px 16px">
+  <h1 class="w3-margin w3-jumbo">Geolocation</h1>
+  <h2 class="w3-margin">Eine Werkstatt</h2>
+</header>
+    
+<!-- Objectives -->
+<div class="w3-container w3-theme-d1 w3-padding-hor-32 w3-theme-l4">
+    <h2 class="accordion w3-text-darkgrey w3-xlarge w3-center"><span style="background-color:#444;">&nbsp; &#128073; &nbsp; Ziel und Inhalt &nbsp;</span></h2>
+    <div class="panel w3-margin">
+      <p class="w3-text-darkgrey w3-xlarge">Wo bin ich? Die möglichst genaue Bestimmung des geografischen Standortes ist nicht nur für Navigationsgeräte (z.B. im Auto, unterwegs in den Bergen, auf dem Schiff), sondern auch für die optimale Informationsvermittlung in Web-Applikationen auf Laptops, Tablets und Smartphones nützlich.</p>
+      <ul class="w3-text-darkgrey w3-xlarge">
+          <li>Wie können Geräte den aktuellen Standort ermitteln?</li>
+          <li>Die Standortermittlung auf dem eigenen Gerät testen</li>
+          <li>Ausgewählte Anwendungen mit Georeferenzierung</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Kapitel -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+    <div class="w3-content">
+        <h1 class="title">Wie können Geräte den aktuellen Standort ermitteln?</h1>
+        <h3 class="title">Satelliten-Navigation</h3>
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-twothird">
+                <p class="w3-text-darkgrey w3-xlarge">Die wahrscheinlich bekannteste Standortermittlung ist die Positionsbestimmung mit dem von den USA betriebenen globalen Navigations-Satellitensystem GPS (Global Positioning System, offiziell NAVSTAR GPS).</p>
+                <p class="w3-text-darkgrey w3-xlarge">Wenn ein mit einem GPS-Empfänger ausgerüstetes Gerät die Signale von mindestens vier GPS-Satelliten (von insgesamt mindestens 24) empfängt, kann es die Position auf etwa 10 Meter genau bestimmen.</p>
+            </div>
+            <div class="w3-third">
+                <p class="w3-center"><img src="img/GPS-constellation-3D-NOAA.jpg" width="80%" alt="gemeinfreie Illustration des GPS-Satellitensystems (https://commons.wikimedia.org/wiki/File:GPS-constellation-3D-NOAA.jpg)" title="gemeinfreie Illustration des GPS-Satellitensystems (https://commons.wikimedia.org/wiki/File:GPS-constellation-3D-NOAA.jpg)">></p>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-twothird">
+                <p class="w3-text-darkgrey w3-xlarge">Auf die gleiche Weise wie das GPS funktioniert das von Russland betriebene globale Navigations-Satellitensystem GLONASS (Globalnaja nawigazionnaja sputnikowaja sistema)</p>
+            </div>
+            <div class="w3-third">
+                <p class="w3-center"><img src="img/Glonass-plan.jpg" width="80%" alt="Illustration des GLONASS-Satellitensystems (https://commons.wikimedia.org/wiki/File:Glonass-plan.jpg)" title=" Illustration des GLONASS-Satellitensystems (https://commons.wikimedia.org/wiki/File:Glonass-plan.jpg); CC-BY-SA Pavel-Glob"></p>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-twothird">
+                <p class="w3-text-darkgrey w3-xlarge">Seit Ende 2016 ist auch das von der Europäischen Union in Auftrag gegebene globale Navigations-Satellitensystem GALILEO (teilweise) operationell. Bis Ende 2019 sollen alle 30 Satelliten in ihre Umlaufbahn gebracht sein.</p>
+            </div>
+            <div class="w3-third">
+                <p class="w3-center"><img src="img/Galileo_node_full_image_2.jpg" width="80%" alt="Das Galileo-Satellitensystem (https://www.esa.int/spaceinimages/Images/2000/10/Galileo)" title=" Das Galileo-Satellitensystem (https://www.esa.int/spaceinimages/Images/2000/10/Galileo); Photo: ESA- J.Huart"></p>
+            </div>
+        </div>
+        <h3 class="title">Standortermittlung mit Hilfe der IP-Adresse</h3>
+        <p class="w3-text-darkgrey w3-xlarge">Um den Standort eines an das Internet angeschlossenen Gerätes (ungefähr) bestimmen zu können, wenn kein Navigations-Satellitensystem genutzt werden kann (z.B. bei einem Laptop), kann die aktive IP-Adresse (Internet-Adresse) des betreffenden Gerätes verwendet werden.</p>
+        <p class="w3-text-darkgrey w3-xlarge">IP-Adressen müssen zentral registriert werden (für Europa ist beispielsweise das <a href="https://www.ripe.net" target="_blank">RIPE Network Coordination Centre</a> zuständig). Die registrierten Daten enthalten auch Standortinformation. Die Daten zu den IP-Adressbereichen sind frei zugänglich (siehe z.B. die Zuordnung von IP-Adressbereichen zu Ländern: <a href="http://lite.ip2location.com/ip-address-ranges-by-country" target="_blank">http://lite.ip2location.com/ip-address-ranges-by-country</a></p>
+        <div class="w3-panel w3-theme-l4">
+            <ul>
+              <li class="w3-text-darkgrey w3-xlarge">Verwenden Sie auf Ihrem Gerät (Laptop oder Smartphone mit deaktiviertem GPS) die Webseite <a href="https://www.iplocation.net" target="_blank">IPlocation</a>, um Ihren Standort (ungefähr) zu bestimmen.</li>
+            </ul>
+            <ul>
+            <li class="w3-text-darkgrey w3-xlarge">Notieren Sie im vorbereiteten Padlet (<a href="https://padlet.com/bruno_wenk/gtvi6lm4vorx" target="_blank">https://padlet.com/bruno_wenk/gtvi6lm4vorx</a>) Ihre Eindrücke und Fragen dazu.</li>
+            </ul>
+        </div>
+        <h3 class="title">Standortermittlung mit Hilfe der Google Location Services</h3>
+        <p class="w3-text-darkgrey w3-xlarge">Die Standortermittlung mit Hilfe der IP-Adresse ist oft zu ungenau. Das W3 Consortium hat deshalb für Webseiten, die auf der Version 5 von HTML basieren, die <a href="https://de.wikipedia.org/wiki/W3C_Geolocation_API" target="_blank">Geolocation API</a> (Application Programming Interface, Programmierschnittstelle) standardisiert. Mittlerweile unterstützen alle Browser diese API.</p>
+        <p class="w3-text-darkgrey w3-xlarge">Wenn eine Webseite die Geolocation API nutzt, versucht der Browser, den Standort möglichst genau zu bestimmen. Falls das betreffende Gerät GPS aktiviert hat, übergibt der Browser der Webseite die GPS-Koordinaten. Andernfalls sendet der Browser eine Anfrage an die <a href="https://developers.google.com/maps/documentation/geolocation/intro" target="_blank">Google Location Services</a> (oder allenfalls einen anderen Location Services Provider). Der Location Services Provider nutzt zur Standortbestimmung nicht nur die IP-Adresse des betreffenden Gerätes, sondern weitere Daten, die der Browser liefert (Angaben zu den in der Nähe befindlichen WLAN-Zugangspunkten und Mobilfunk-Antennen). Der Location Services Provider verfügt über eine riesige Datenbank mit Angaben zu den WLAN-Zugangspunkten und Mobilfunk-Antennen auf der ganzen Welt. Durch Vergleich der vom Browser gelieferten Daten mit denjenigen in der Datenbank kann der Location Services Provider den Standort des Gerätes oft sehr genau bestimmen. Im ungünstigsten Fall erfolgt die Standortbestimmung mit Hilfe der IP-Adresse.</p>
+        <div class="w3-panel w3-theme-l4">
+            <ul>
+              <li class="w3-text-darkgrey w3-xlarge">Verwenden Sie auf Ihrem Gerät (Laptop oder Smartphone mit deaktiviertem GPS) die Webseite <a href="https://html5demos.com/geo/" target="_blank">HTML5 Demo: Geolocation</a>, um Ihren Standort mit Hilfe der W3C Geolocation API zu bestimmen. Sie müssen dazu die Nutzung der Standortbestimmung in Ihrem Browser zulassen (eventuell "Einstellungen" / "Settings" anpassen).</li>
+            </ul>
+            <ul>
+            <li class="w3-text-darkgrey w3-xlarge">Notieren Sie im vorbereiteten Padlet (<a href="https://padlet.com/bruno_wenk/gtvi6lm4vorx" target="_blank">https://padlet.com/bruno_wenk/gtvi6lm4vorx</a>) Ihre Eindrücke und Fragen dazu.</li>
+            </ul>
+        </div>
+        <h1 class="title">Ausgewählte Anwendungen mit Georeferenzierung</h1>
+        <h3 class="title">Wo wurde dieses Foto aufgenommen?</h3>
+        <p class="w3-text-darkgrey w3-xlarge">Viele Digitalkameras verfügen über eine Standortbestimmung mit GPS. Mit der Aufnahme eines Bildes speichern sie die aktuellen Koordinaten als Metadaten in der Bilddatei.</p>
+        <div class="w3-panel w3-theme-l4">
+            <div class="w3-row-padding w3-margin-top">
+            <div class="w3-twothird">
+                <ul>
+                    <li class="w3-text-darkgrey w3-xlarge">Speichern Sie das nebenstehende Bild auf Ihrem Rechner (herunterladen).</li>
+                </ul>
+                <ul>
+                    <li class="w3-text-darkgrey w3-xlarge">Nutzen Sie die Web-Applikation <a href="https://www.pic2map.com" target="_blank">Pic2Map Photo Location Viewer</a>, um den Aufnahmestandort des Bildes auf einer Karte anzuzeigen.</li>
+                </ul>
+                <ul>
+                    <li class="w3-text-darkgrey w3-xlarge">Löschen Sie bitte danach das Foto im "Pic2Map Photo Location Viewer" wieder - danke.</li>
+                </ul>
+                <p>(Das Bild wurde mit einem Android-Tablet ohne GPS gemacht. In der Original-Bilddatei sind deshalb keine Metadaten zum Standort der Aufnahme enthalten. Die Metadaten zum Standort der Aufnahme wurden mit Hilfe der Web-Applikation <a href="https://www.geoimgr.com" target="_blank">GeoImgr</a> manuell eingefügt.)</p>
+            </div>
+            <div class="w3-third">
+                <p class="w3-center"><img src="img/BrueckeOberriet1.jpg" width="80%" alt="Eisenbahnbrücke" title="Eisenbahnbrücke (Foto: B.Wenk)"></p>
+            </div>
+            </div>   
+        </div>
+        <h3 class="title">Wo steckt der Schatz?</h3>
+        <p class="w3-text-darkgrey w3-xlarge"><a href="http://www.geocache.ch" target="_blank">Geocaching</a> ist eine Art digitaler Schatzsuche oder Schnitzeljagd. Engagierte Personen verstecken Caches (geheime Lager) - in denen sich jeweils ein Logbuch befindet - an interessanten, zugänglichen Orten und veröffentlichen eine kurze Beschreibung des Cache mit der Angabe der betreffenden Koordinaten im Web (z.B. auf <a href="https://www.geocaching.com" target="_blank">geocaching.com</a>). Es ist ein Freizeitvergnügen für Jung und Alt, für Einzelgänger und Gruppen, solche Caches zu finden und den Fund jeweils im Logbuch einzutragen.</p>
+        <p class="w3-text-darkgrey w3-xlarge">Die Caches sind oft an ungewöhnlichen Orten versteckt (z.B. auf Bäumen, in Höhlen, am Rande eines belebten Platzes in einer Stadt). Sie können nur gefunden werden, wenn man deren Koordinaten kennt.</p>
+        <div class="w3-panel w3-theme-l4">
+            <div class="w3-row-padding w3-margin-top">
+            <div class="w3-half">
+                <ul>
+                    <li class="w3-text-darkgrey w3-xlarge">Melden Sie sich auf der Plattform <a href="https://www.geocaching.com" target="_blank">geocaching.com</a> mit dem Nutzername "mas_is" und dem Passwort "mas_is2018" an.</li>
+                </ul>
+                <ul>
+                    <li class="w3-text-darkgrey w3-xlarge">Lassen Sie sich Caches in der Nähe anzeigen, indem Sie im Suchfeld "Meinen aktuellen Standort verwenden" auswählen.</li>
+                </ul>
+                <ul>
+                    <li class="w3-text-darkgrey w3-xlarge">Notieren Sie die Koordinaten eines dieser Caches und wandeln Sie die Angaben in der Notation "Grad / Minuten"(z.B. N 47° 24.014' E 9° 37.937') mit Hilfe der Web-Applikation <a href="https://podcast.paravan.ch/?page_id=2278" target="_blank">In Schweizer Koordinaten umrechnen</a> in das Schweizer Gitter um (z.B. 765576 / 252249).</li>
+                </ul>
+                <ul>
+                    <li class="w3-text-darkgrey w3-xlarge">Öffnen Sie die Webseite <a href="https://map.geo.admin.ch" target="_blank">map.geo.admin.ch</a> und kopieren Sie die Koordinaten im Schweizer Gitter in das Suchfeld, um sich den Cache auf der Karte anzeigen zu lassen.</li>
+                </ul>
+            </div>
+            <div class="w3-half">
+                <p class="w3-center"><img src="img/geocaching-1.png" width="80%"></p>
+                <p class="w3-center w3-small"><a href="img/geocaching-1.png" target="_blank">vergrössern</a></p>
+                <p class="w3-center"><img src="img/geocaching-2.png" width="80%"></p>
+                <p class="w3-center w3-small"><a href="img/geocaching-2.png" target="_blank">vergrössern</a></p>
+                <p class="w3-center"><img src="img/geocaching-3.png" width="80%"></p>
+                <p class="w3-center w3-small"><a href="img/geocaching-3.png" target="_blank">vergrössern</a></p>
+            </div>
+            </div>   
+        </div>
+    </div>  
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-black w3-center w3-opacity" style="font-family: 'Verdana', sans-serif;"> 
+  <p class="w3-small">Bruno Wenk, Juni 2018</p>
+  <p><img src="img/PublicDomain.svg"></p> 
+ <p class="w3-small">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// accordion
+function myAccordion(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace("w3-theme-l2", "w3-theme-l4");
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace("w3-theme-l4", "w3-theme-l2");
+    }
+}
+</script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
+
